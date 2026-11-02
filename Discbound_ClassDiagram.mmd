@@ -1,0 +1,104 @@
+classDiagram
+    direction TB
+
+    %% Player & Inventory (MonoBehaviour)
+    class Player {
+        -Vector2Int gridPos
+        -Inventory inventory
+        +TryMove(Vector2Int dir) bool
+        +GetInventory() Inventory
+        -CheckCell(Vector2Int targetPos) InteractableObject
+    }
+
+    class Inventory {
+        -int keyCount
+        +AddKey(int amount) void
+        +UseKey(int amount) bool
+        +HasKey(int amount) bool
+    }
+
+    %% Base Abstract & Interface
+    class InteractableObject {
+        #Vector2Int gridPos
+        +Interact(Player player, Vector2Int dir) bool
+    }
+
+    class IPushable {
+        +CanPush(Vector2Int dir) bool
+        +Push(Vector2Int dir) bool
+    }
+
+    %% 1. Interact Objects
+    class Enemy {
+        -int hp
+        +Interact(Player player, Vector2Int dir) bool
+        +CanPush(Vector2Int dir) bool
+        +Push(Vector2Int dir) bool
+        -TakeDamage(int dmg) void
+        -Die() void
+    }
+
+    class PushableWall {
+        +Interact(Player player, Vector2Int dir) bool
+        +CanPush(Vector2Int dir) bool
+        +Push(Vector2Int dir) bool
+    }
+
+    class Door {
+        -bool isLocked
+        -int requiredKeys
+        +Interact(Player player, Vector2Int dir) bool
+        -Unlock() void
+    }
+
+    %% 2. Key Item
+    class KeyItem {
+        -int amount
+        +Interact(Player player, Vector2Int dir) bool
+    }
+
+    %% 3. Dialogue NPC
+    class NPC {
+        -DialogueData dialogue
+        +Interact(Player player, Vector2Int dir) bool
+    }
+
+    class DialogueManager {
+        +DialogueManager Instance
+        -DialogueData currentDialogue
+        +StartDialogue(DialogueData data) void
+        +SelectChoice(int choiceIndex) void
+        +CloseDialogue() void
+    }
+
+    class DialogueData {
+        +string npcName
+        +string dialogueText
+        +List~Choice~ choices
+    }
+
+    class Choice {
+        +string choiceText
+        +string responseText
+    }
+
+    %% Relationships
+    Player *-- Inventory : has
+    Player ..> InteractableObject : CheckCell / Interact
+
+    InteractableObject <|-- Enemy
+    InteractableObject <|-- PushableWall
+    InteractableObject <|-- Door
+    InteractableObject <|-- KeyItem
+    InteractableObject <|-- NPC
+
+    IPushable <|.. Enemy
+    IPushable <|.. PushableWall
+
+    Door ..> Inventory : UseKey
+    KeyItem ..> Inventory : AddKey
+
+    NPC --> DialogueData
+    NPC ..> DialogueManager : StartDialogue
+    DialogueManager ..> DialogueData
+    DialogueData *-- Choice
