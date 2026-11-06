@@ -18,12 +18,12 @@ classDiagram
     }
 
     %% Base Abstract & Interface
-    class InteractableObject {
+    class InteractableObject["InteractableObject (Abstract)"] {
         #Vector2Int gridPos
         +Interact(Player player, Vector2Int dir) bool
     }
 
-    class IPushable {
+    class IPushable["IPushable (Interface)"] {
         +CanPush(Vector2Int dir) bool
         +Push(Vector2Int dir) bool
     }
@@ -57,29 +57,29 @@ classDiagram
         +Interact(Player player, Vector2Int dir) bool
     }
 
-    %% 3. Dialogue NPC
+    %% 3. Dialogue NPC (Unified Node Tree - Helltaker Style)
     class NPC {
-        -DialogueData dialogue
+        -string npcName
+        -DialogueNode rootNode
         +Interact(Player player, Vector2Int dir) bool
     }
 
     class DialogueManager {
         +DialogueManager Instance
-        -DialogueData currentDialogue
-        +StartDialogue(DialogueData data) void
-        +SelectChoice(int choiceIndex) void
-        +CloseDialogue() void
+        -DialogueNode currentNode
+        +StartDialogue(string npcName, DialogueNode root) void
+        +SelectChoice(int index) void
+        -CheckOutcome(DialogueNode node) void
+        -GameOver() void
+        -NextStage() void
     }
 
-    class DialogueData {
-        +string npcName
-        +string dialogueText
-        +List~Choice~ choices
-    }
-
-    class Choice {
+    class DialogueNode {
         +string choiceText
-        +string responseText
+        +string npcText
+        +bool isGameOver
+        +bool isStageClear
+        +List~DialogueNode~ nextNodes
     }
 
     %% Relationships
@@ -98,7 +98,7 @@ classDiagram
     Door ..> Inventory : UseKey
     KeyItem ..> Inventory : AddKey
 
-    NPC --> DialogueData
+    NPC --> DialogueNode : rootNode
     NPC ..> DialogueManager : StartDialogue
-    DialogueManager ..> DialogueData
-    DialogueData *-- Choice
+    DialogueManager ..> DialogueNode
+    DialogueNode o-- DialogueNode : nextNodes

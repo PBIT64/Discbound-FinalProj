@@ -1,11 +1,12 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="หน้า-1" id="24PvYLL1LJbQTsqT1kd7">
+  <diagram name="Discbound Class Diagram" id="24PvYLL1LJbQTsqT1kd7">
     <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" adaptiveColors="auto">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+
         <mxCell id="player" value="Player" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="320" y="40" width="330" height="164" as="geometry" />
+          <mxGeometry x="360" y="40" width="330" height="164" as="geometry" />
         </mxCell>
         <mxCell id="player_a1" value="- Vector2Int gridPos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="player">
           <mxGeometry y="28" width="330" height="26" as="geometry" />
@@ -27,49 +28,49 @@
         </mxCell>
 
         <mxCell id="inv" value="Inventory" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="760" y="40" width="240" height="138" as="geometry" />
+          <mxGeometry x="820" y="40" width="250" height="138" as="geometry" />
         </mxCell>
         <mxCell id="inv_a1" value="- int keyCount" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="inv">
-          <mxGeometry y="28" width="240" height="26" as="geometry" />
+          <mxGeometry y="28" width="250" height="26" as="geometry" />
         </mxCell>
         <mxCell id="inv_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;html=1;" vertex="1" parent="inv">
-          <mxGeometry y="54" width="240" height="6" as="geometry" />
+          <mxGeometry y="54" width="250" height="6" as="geometry" />
         </mxCell>
         <mxCell id="inv_m1" value="+ AddKey(int amount): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="inv">
-          <mxGeometry y="60" width="240" height="26" as="geometry" />
+          <mxGeometry y="60" width="250" height="26" as="geometry" />
         </mxCell>
         <mxCell id="inv_m2" value="+ UseKey(int amount): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="inv">
-          <mxGeometry y="86" width="240" height="26" as="geometry" />
+          <mxGeometry y="86" width="250" height="26" as="geometry" />
         </mxCell>
         <mxCell id="inv_m3" value="+ HasKey(int amount): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="inv">
-          <mxGeometry y="112" width="240" height="26" as="geometry" />
+          <mxGeometry y="112" width="250" height="26" as="geometry" />
         </mxCell>
 
-        <mxCell id="ipush" value="IPushable" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="50" y="250" width="240" height="80" as="geometry" />
+        <mxCell id="ipush" value="&lt;font style=&quot;font-size:11px;font-weight:normal;font-style:italic;&quot;&gt;&amp;laquo;Interface&amp;raquo;&lt;/font&gt;&lt;br&gt;IPushable" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=44;collapsible=0;html=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="250" width="260" height="96" as="geometry" />
         </mxCell>
         <mxCell id="ipush_m1" value="+ CanPush(Vector2Int dir): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="ipush">
-          <mxGeometry y="28" width="240" height="26" as="geometry" />
+          <mxGeometry y="44" width="260" height="26" as="geometry" />
         </mxCell>
         <mxCell id="ipush_m2" value="+ Push(Vector2Int dir): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="ipush">
-          <mxGeometry y="54" width="240" height="26" as="geometry" />
+          <mxGeometry y="70" width="260" height="26" as="geometry" />
         </mxCell>
 
-        <mxCell id="inter" value="InteractableObject" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="340" y="250" width="310" height="86" as="geometry" />
+        <mxCell id="inter" value="&lt;font style=&quot;font-size:11px;font-weight:normal;font-style:italic;&quot;&gt;&amp;laquo;Abstract&amp;raquo;&lt;/font&gt;&lt;br&gt;InteractableObject" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=44;collapsible=0;html=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="500" y="250" width="310" height="102" as="geometry" />
         </mxCell>
         <mxCell id="inter_a1" value="# Vector2Int gridPos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="inter">
-          <mxGeometry y="28" width="310" height="26" as="geometry" />
+          <mxGeometry y="44" width="310" height="26" as="geometry" />
         </mxCell>
         <mxCell id="inter_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;html=1;" vertex="1" parent="inter">
-          <mxGeometry y="54" width="310" height="6" as="geometry" />
+          <mxGeometry y="70" width="310" height="6" as="geometry" />
         </mxCell>
         <mxCell id="inter_m1" value="+ Interact(Player player, Vector2Int dir): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="inter">
-          <mxGeometry y="60" width="310" height="26" as="geometry" />
+          <mxGeometry y="76" width="310" height="26" as="geometry" />
         </mxCell>
 
         <mxCell id="enemy" value="Enemy" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="20" y="420" width="290" height="190" as="geometry" />
+          <mxGeometry x="20" y="450" width="290" height="190" as="geometry" />
         </mxCell>
         <mxCell id="enemy_a1" value="- int hp" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="enemy">
           <mxGeometry y="28" width="290" height="26" as="geometry" />
@@ -94,7 +95,7 @@
         </mxCell>
 
         <mxCell id="wall" value="PushableWall" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="340" y="420" width="290" height="106" as="geometry" />
+          <mxGeometry x="340" y="450" width="290" height="106" as="geometry" />
         </mxCell>
         <mxCell id="wall_m1" value="+ Interact(Player player, Vector2Int dir): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="wall">
           <mxGeometry y="28" width="290" height="26" as="geometry" />
@@ -107,7 +108,7 @@
         </mxCell>
 
         <mxCell id="door" value="Door" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="660" y="420" width="290" height="138" as="geometry" />
+          <mxGeometry x="660" y="450" width="290" height="138" as="geometry" />
         </mxCell>
         <mxCell id="door_a1" value="- bool isLocked" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="door">
           <mxGeometry y="28" width="290" height="26" as="geometry" />
@@ -126,7 +127,7 @@
         </mxCell>
 
         <mxCell id="key" value="KeyItem" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="980" y="420" width="290" height="86" as="geometry" />
+          <mxGeometry x="980" y="450" width="290" height="86" as="geometry" />
         </mxCell>
         <mxCell id="key_a1" value="- int amount" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="key">
           <mxGeometry y="28" width="290" height="26" as="geometry" />
@@ -139,61 +140,66 @@
         </mxCell>
 
         <mxCell id="npc" value="NPC" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="1300" y="420" width="290" height="86" as="geometry" />
+          <mxGeometry x="1300" y="450" width="290" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="npc_a1" value="- DialogueData dialogue" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="npc">
+        <mxCell id="npc_a1" value="- string npcName" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="npc">
           <mxGeometry y="28" width="290" height="26" as="geometry" />
         </mxCell>
+        <mxCell id="npc_a2" value="- DialogueNode rootNode" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="npc">
+          <mxGeometry y="54" width="290" height="26" as="geometry" />
+        </mxCell>
         <mxCell id="npc_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;html=1;" vertex="1" parent="npc">
-          <mxGeometry y="54" width="290" height="6" as="geometry" />
+          <mxGeometry y="80" width="290" height="6" as="geometry" />
         </mxCell>
         <mxCell id="npc_m1" value="+ Interact(Player player, Vector2Int dir): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="npc">
-          <mxGeometry y="60" width="290" height="26" as="geometry" />
+          <mxGeometry y="86" width="290" height="26" as="geometry" />
         </mxCell>
 
         <mxCell id="dm" value="DialogueManager" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="960" y="590" width="290" height="164" as="geometry" />
+          <mxGeometry x="880" y="660" width="350" height="216" as="geometry" />
         </mxCell>
         <mxCell id="dm_a1" value="+ DialogueManager Instance" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dm">
-          <mxGeometry y="28" width="290" height="26" as="geometry" />
+          <mxGeometry y="28" width="350" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="dm_a2" value="- DialogueData currentDialogue" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dm">
-          <mxGeometry y="54" width="290" height="26" as="geometry" />
+        <mxCell id="dm_a2" value="- DialogueNode currentNode" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dm">
+          <mxGeometry y="54" width="350" height="26" as="geometry" />
         </mxCell>
         <mxCell id="dm_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;html=1;" vertex="1" parent="dm">
-          <mxGeometry y="80" width="290" height="6" as="geometry" />
+          <mxGeometry y="80" width="350" height="6" as="geometry" />
         </mxCell>
-        <mxCell id="dm_m1" value="+ StartDialogue(DialogueData data): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dm">
-          <mxGeometry y="86" width="290" height="26" as="geometry" />
+        <mxCell id="dm_m1" value="+ StartDialogue(string npcName, DialogueNode root): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dm">
+          <mxGeometry y="86" width="350" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="dm_m2" value="+ SelectChoice(int choiceIndex): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dm">
-          <mxGeometry y="112" width="290" height="26" as="geometry" />
+        <mxCell id="dm_m2" value="+ SelectChoice(int index): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dm">
+          <mxGeometry y="112" width="350" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="dm_m3" value="+ CloseDialogue(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dm">
-          <mxGeometry y="138" width="290" height="26" as="geometry" />
+        <mxCell id="dm_m3" value="- CheckOutcome(DialogueNode node): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dm">
+          <mxGeometry y="138" width="350" height="26" as="geometry" />
         </mxCell>
-
-        <mxCell id="ddata" value="DialogueData" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="1300" y="590" width="260" height="106" as="geometry" />
+        <mxCell id="dm_m4" value="- GameOver(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dm">
+          <mxGeometry y="164" width="350" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="ddata_a1" value="+ string npcName" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="ddata">
-          <mxGeometry y="28" width="260" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="ddata_a2" value="+ string dialogueText" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="ddata">
-          <mxGeometry y="54" width="260" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="ddata_a3" value="+ List&amp;lt;Choice&amp;gt; choices" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="ddata">
-          <mxGeometry y="80" width="260" height="26" as="geometry" />
+        <mxCell id="dm_m5" value="- NextStage(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dm">
+          <mxGeometry y="190" width="350" height="26" as="geometry" />
         </mxCell>
 
-        <mxCell id="choice" value="Choice" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="1300" y="750" width="260" height="80" as="geometry" />
+        <mxCell id="dnode" value="DialogueNode" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontalStack=0;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=28;collapsible=0;html=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="660" width="290" height="158" as="geometry" />
         </mxCell>
-        <mxCell id="choice_a1" value="+ string choiceText" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="choice">
-          <mxGeometry y="28" width="260" height="26" as="geometry" />
+        <mxCell id="dnode_a1" value="+ string choiceText" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dnode">
+          <mxGeometry y="28" width="290" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="choice_a2" value="+ string responseText" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="choice">
-          <mxGeometry y="54" width="260" height="26" as="geometry" />
+        <mxCell id="dnode_a2" value="+ string npcText" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dnode">
+          <mxGeometry y="54" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dnode_a3" value="+ bool isGameOver" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dnode">
+          <mxGeometry y="80" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dnode_a4" value="+ bool isStageClear" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dnode">
+          <mxGeometry y="106" width="290" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="dnode_a5" value="+ List&amp;lt;DialogueNode&amp;gt; nextNodes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=12;" vertex="1" parent="dnode">
+          <mxGeometry y="132" width="290" height="26" as="geometry" />
         </mxCell>
 
         <mxCell id="e_player_inv" value="has" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=diamondThin;startFill=1;startSize=14;endArrow=none;" edge="1" parent="1" source="player" target="inv">
@@ -229,20 +235,19 @@
         <mxCell id="e_key_inv" value="AddKey" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1" source="key" target="inv">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_npc_ddata" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;" edge="1" parent="1" source="npc" target="ddata">
+        <mxCell id="e_npc_dnode" value="rootNode" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;" edge="1" parent="1" source="npc" target="dnode">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_npc_dm" value="StartDialogue" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1" source="npc" target="dm">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_dm_ddata" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1" source="dm" target="ddata">
+        <mxCell id="e_dm_dnode" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=open;" edge="1" parent="1" source="dm" target="dnode">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_ddata_choice" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=diamondThin;startFill=1;startSize=14;endArrow=none;" edge="1" parent="1" source="ddata" target="choice">
+        <mxCell id="e_dnode_self" value="nextNodes" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=diamondThin;startFill=0;startSize=14;endArrow=open;exitX=1;exitY=0.75;entryX=1;entryY=0.25;" edge="1" parent="1" source="dnode" target="dnode">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
 </mxfile>
-
