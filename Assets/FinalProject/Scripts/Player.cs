@@ -26,7 +26,7 @@ namespace FinalProject
 
         public new void Update()
         {
-            if (isAutoMoving)
+            if (isAutoMoving || isMoving)
             {
                 return;
             }
@@ -78,6 +78,11 @@ namespace FinalProject
 
         public bool TryMove(Vector2Int dir)
         {
+            if (isMoving)
+            {
+                return false;
+            }
+
             if (isFreeze)
             {
                 GetComponent<SpriteRenderer>().color = Color.white;
