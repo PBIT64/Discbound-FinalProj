@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using DG.Tweening;
 
 namespace Solution
 {
@@ -9,6 +9,11 @@ namespace Solution
         public int energy;
         public int maxEnergy;
         public int AttackPoint;
+
+        [Header("Movement Tween")]
+        public float moveDuration = 0.2f;
+        public Ease moveEase = Ease.OutQuad;
+        public bool isMoving { get; protected set; } = false;
 
         protected bool isAlive;
         protected bool isFreeze;
@@ -69,8 +74,17 @@ namespace Solution
             mapGenerator.mapdata[positionX, positionY] = null;
             positionX = toX;
             positionY = toY;
-            transform.position = new Vector3(positionX, positionY, 0);
+            isMoving = true;
+            transform.DOKill();
+            transform.DOMove(new Vector3(positionX, positionY, transform.position.z), moveDuration)
+                .SetEase(moveEase)
+                .OnComplete(() => isMoving = false);
             mapGenerator.mapdata[positionX, positionY] = this;
+        }
+
+        protected virtual void OnDestroy()
+        {
+            transform.DOKill();
         }
 
         // hasPlacement คืนค่า true ถ้ามีการวางอะไรไว้บน map ที่ตำแหน่ง x,y

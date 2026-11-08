@@ -42,8 +42,8 @@ namespace Solution
 
         public void Update()
         {
-            // Manual input is only processed if not in auto-move mode
-            if (isAutoMoving)
+            // Manual input is only processed if not in auto-move mode or moving
+            if (isAutoMoving || isMoving)
             {
                 return;
             }
@@ -84,10 +84,14 @@ namespace Solution
         }
         public override void Move(Vector2 direction)
         {
+            if (isMoving)
+            {
+                return;
+            }
             base.Move(direction);
             mapGenerator.MoveEnemies();
             // Save the state AFTER the move
-      
+
         }
 
         public override void UpdatePosition(int toX, int toY)
@@ -98,9 +102,9 @@ namespace Solution
 
         public void UseFireStorm()
         {
-            if (inventory.HasItem("FireStorm",1))
+            if (inventory.HasItem("FireStorm", 1))
             {
-                inventory.UseItem("FireStorm",1);
+                inventory.UseItem("FireStorm", 1);
                 OOPEnemy[] enemies = UtilitySortEnemies.SortEnemiesByRemainningEnergy1(mapGenerator);
                 int count = 3;
                 if (count > enemies.Length)
@@ -117,7 +121,7 @@ namespace Solution
                 Debug.Log("No FireStorm in inventory");
             }
         }
-        
+
         public void Attack(OOPEnemy _enemy)
         {
             _enemy.TakeDamage(AttackPoint);
