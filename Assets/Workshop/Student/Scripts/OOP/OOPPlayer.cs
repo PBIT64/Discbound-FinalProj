@@ -7,6 +7,21 @@ namespace Solution
 
     public class OOPPlayer : Character
     {
+        [Header("Diagram Data")]
+        [SerializeField]
+        private Vector2Int gridPos;
+
+        public Vector2Int GridPos
+        {
+            get => gridPos;
+            set
+            {
+                gridPos = value;
+                positionX = value.x;
+                positionY = value.y;
+            }
+        }
+
         public Inventory inventory;
         public ActionHistoryManager actionHistoryManager;
         private InputAction moveAction;
@@ -17,6 +32,7 @@ namespace Solution
         public override void SetUP()
         {
             base.SetUP();
+            gridPos = new Vector2Int(positionX, positionY);
             PrintInfo();
             GetRemainEnergy();
             inventory = GetComponent<Inventory>();
@@ -72,6 +88,12 @@ namespace Solution
             mapGenerator.MoveEnemies();
             // Save the state AFTER the move
       
+        }
+
+        public override void UpdatePosition(int toX, int toY)
+        {
+            base.UpdatePosition(toX, toY);
+            gridPos = new Vector2Int(positionX, positionY);
         }
 
         public void UseFireStorm()
