@@ -4,6 +4,35 @@ using UnityEngine;
 namespace Solution {
     public class Inventory : MonoBehaviour
     {
+        [Header("Keys (Diagram)")]
+        [SerializeField]
+        private int keyCount = 0;
+
+        public int KeyCount => keyCount;
+
+        public void AddKey(int amount)
+        {
+            if (amount > 0)
+            {
+                keyCount += amount;
+            }
+        }
+
+        public bool UseKey(int amount)
+        {
+            if (HasKey(amount))
+            {
+                keyCount -= amount;
+                return true;
+            }
+            return false;
+        }
+
+        public bool HasKey(int amount)
+        {
+            return amount > 0 && keyCount >= amount;
+        }
+
         public Dictionary<string, int> inventory = new Dictionary<string, int>();
 
         // เพิ่มไอเท็ม
