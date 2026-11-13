@@ -20,26 +20,20 @@ namespace FinalProject
             }
         }
 
-        public override void SetUP()
-        {
-            base.SetUP();
-            gridPos = new Vector2Int(positionX, positionY);
-        }
 
         public abstract bool Interact(Player player, Vector2Int dir);
 
-        public override bool Hit()
+        // Identity
+        public override void SetUP()
         {
-            if (mapGenerator != null && mapGenerator.player != null)
+            base.SetUP();
+            positionX = gridPos.x;
+            positionY = gridPos.y;
+            transform.position = new Vector3(gridPos.x, gridPos.y, 0);
+            if (mapGenerator != null && mapGenerator.mapdata != null)
             {
-                Vector2Int dir = new Vector2Int(positionX - mapGenerator.player.positionX, positionY - mapGenerator.player.positionY);
-                Player fpPlayer = mapGenerator.player as Player;
-                if (fpPlayer != null)
-                {
-                    return Interact(fpPlayer, dir);
-                }
+                mapGenerator.mapdata[gridPos.x, gridPos.y] = this;
             }
-            return false;
         }
     }
 }
