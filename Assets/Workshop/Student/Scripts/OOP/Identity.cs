@@ -9,7 +9,9 @@ namespace Solution
     {
         [Header("Identity")]
         public string Name;
+        [HideInInspector]
         public int positionX;
+        [HideInInspector]
         public int positionY;
 
         public OOPMapGenerator mapGenerator;
@@ -25,9 +27,9 @@ namespace Solution
         }
         public void PrintInfo()
         {
-            Debug.Log("created " + Name +" at "+positionX + ":"+positionY);
+            Debug.Log("created " + Name + " at " + positionX + ":" + positionY);
         }
-        
+
         public virtual bool Hit()
         {
             return false;
