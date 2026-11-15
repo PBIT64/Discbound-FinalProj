@@ -7,7 +7,7 @@ namespace FinalProject
     {
         public override bool Interact(Player player, Vector2Int dir)
         {
-            return true;
+            return false;
         }
     }
 }
