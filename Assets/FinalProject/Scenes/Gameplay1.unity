@@ -3209,6 +3209,10 @@ PrefabInstance:
       propertyPath: colloctItemCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8365133027701863277, guid: 896fac2834903504f8973b3186300203, type: 3}
+      propertyPath: pushableWallPrefab
+      value: 
+      objectReference: {fileID: 503015985953758409, guid: a0f34153e2e771f4ca81377f1956be9e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

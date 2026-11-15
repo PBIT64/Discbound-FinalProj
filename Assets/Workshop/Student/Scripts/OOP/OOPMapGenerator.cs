@@ -44,6 +44,7 @@ namespace Solution
         public GameObject[] collectItemsPrefab;
         public GameObject[] EnemyPrefab;
         public GameObject[] SkillPrefab;
+        public GameObject pushableWallPrefab;
 
         [Header("Set Transform")]
         public Transform floorParent;
@@ -281,6 +282,14 @@ namespace Solution
                         spawnedWallPositions.Add(new Vector2Int(x, y));
                         mapdata[x, y] = Wall;
                     }
+                    else if (c == 'B' || c == 'b' || c == 'O' || c == 'o')
+                    {
+                        // Pushable Wall (Block)
+                        hasTileInLayout[x, y] = true;
+                        validFloorMask[x, y] = true;
+                        SpawnFloorTile(x, y);
+                        SpawnPushableWall(x, y);
+                    }
                     else
                     {
                         // Walkable floor ('.', 'P', 'E', etc.)
@@ -328,6 +337,36 @@ namespace Solution
                             }
                         }
                     }
+                }
+            }
+        }
+
+        private void SpawnPushableWall(int x, int y)
+        {
+            if (pushableWallPrefab == null) return;
+            GameObject obj = Instantiate(pushableWallPrefab, new Vector3(x, y, 0), Quaternion.identity);
+            if (itemParent != null)
+            {
+                obj.transform.parent = itemParent;
+            }
+            obj.name = $"PushableWall_{x}, {y}";
+
+            var interactable = obj.GetComponent<FinalProject.InteractableObject>();
+            if (interactable != null)
+            {
+                interactable.mapGenerator = this;
+                interactable.GridPos = new Vector2Int(x, y);
+                mapdata[x, y] = interactable;
+            }
+            else
+            {
+                var identity = obj.GetComponent<Identity>();
+                if (identity != null)
+                {
+                    identity.mapGenerator = this;
+                    identity.positionX = x;
+                    identity.positionY = y;
+                    mapdata[x, y] = identity;
                 }
             }
         }
