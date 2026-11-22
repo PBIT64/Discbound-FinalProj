@@ -3,11 +3,16 @@ using DG.Tweening;
 
 namespace FinalProject
 {
-    public class PushableWall : InteractableObject
+    public class PushableWall : InteractableObject, IPushable
     {
         public float moveDuration = 0.2f;
 
         public override bool Interact(Player player, Vector2Int dir)
+        {
+            return Push(dir);
+        }
+
+        public bool CanPush(Vector2Int dir)
         {
             if (mapGenerator == null) return false;
 
@@ -24,6 +29,15 @@ namespace FinalProject
             {
                 return false;
             }
+
+            return true;
+        }
+
+        public bool Push(Vector2Int dir)
+        {
+            if (!CanPush(dir)) return false;
+
+            Vector2Int nextPos = GridPos + dir;
 
             // ย้ายตำแหน่งใน mapdata
             mapGenerator.mapdata[GridPos.x, GridPos.y] = null;
