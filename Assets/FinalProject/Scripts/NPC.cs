@@ -7,6 +7,7 @@ namespace FinalProject
         [SerializeField]
         private string npcName;
 
+        [SerializeField]
         private DialogueNode rootNode;
 
         public override bool Interact(Player player, Vector2Int dir)
