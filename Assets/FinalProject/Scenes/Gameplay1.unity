@@ -3152,6 +3152,30 @@ PrefabInstance:
       propertyPath: pushableWallPrefab
       value: 
       objectReference: {fileID: 503015985953758409, guid: a0f34153e2e771f4ca81377f1956be9e, type: 3}
+    - target: {fileID: 8365133027701863277, guid: 896fac2834903504f8973b3186300203, type: 3}
+      propertyPath: wallsPrefab.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365133027701863277, guid: 896fac2834903504f8973b3186300203, type: 3}
+      propertyPath: floorsPrefab.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365133027701863277, guid: 896fac2834903504f8973b3186300203, type: 3}
+      propertyPath: 'wallsPrefab.Array.data[0]'
+      value: 
+      objectReference: {fileID: 110520, guid: d47c29404cdf3c340abdada9f11cee8f, type: 3}
+    - target: {fileID: 8365133027701863277, guid: 896fac2834903504f8973b3186300203, type: 3}
+      propertyPath: 'wallsPrefab.Array.data[1]'
+      value: 
+      objectReference: {fileID: 110520, guid: ff83f305149f85340adfd913ffe8372c, type: 3}
+    - target: {fileID: 8365133027701863277, guid: 896fac2834903504f8973b3186300203, type: 3}
+      propertyPath: 'floorsPrefab.Array.data[0]'
+      value: 
+      objectReference: {fileID: 106160, guid: 729dcdf70c25a3040914cf736af750f8, type: 3}
+    - target: {fileID: 8365133027701863277, guid: 896fac2834903504f8973b3186300203, type: 3}
+      propertyPath: 'floorsPrefab.Array.data[1]'
+      value: 
+      objectReference: {fileID: 106160, guid: 22449c5d8a4b4894dbd9a8942cb4ccf9, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
